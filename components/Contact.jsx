@@ -31,36 +31,26 @@ const Contact = ({ emailData, emailError }) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append('file', file);
-  
+
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
     const supabase = createClient(supabaseUrl, supabaseKey);
-  
+
     const { data: imageData, error: uploadError } = await supabase.storage
       .from('images')
       .upload(`images/${file.name}`, file, {
         cacheControl: 'max-age=31536000, public',
         upsert: false,
       });
-  
+
     if (uploadError) {
       alert(uploadError.message);
       location.reload();
     } else {
-      const { data: insertData, error: insertError } = await supabase
-        .from('images')
-        .insert([{ filename: file.name, url: `https://my-bucket.s3.amazonaws.com/images/${file.name}` }]);
-      
-      if (insertError) {
-        alert(insertError.message);
-        location.reload();
-      } else {
-        alert('Updated to Database Successfully!');
-        location.reload();
-      }
+      alert('Updated to Database Successfully!');
+      location.reload();
     }
   };
-  
 
   const handleSubscribe = async (event) => {
     event.preventDefault();
