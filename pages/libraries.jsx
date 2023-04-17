@@ -7,7 +7,7 @@ import { SliderData } from '../components/SliderData'
 const libraries = () => {
   return (
     <div>
-        <Hero heading='Libraries' message='Scorll down to checkout various amazing copyright-free images below :' />
+        <Hero heading='Libraries' message='Scorll down ⬇ to checkout various amazing copyright-free images below :' />
         <Slider slides = {SliderData} /> 
         <Download/>
     </div>

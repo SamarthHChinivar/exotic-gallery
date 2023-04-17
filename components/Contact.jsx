@@ -7,10 +7,10 @@ export async function getServerSideProps() {
     process.env.SUPABASE_SERVICE_ROLE_KEY || ''
   )
 
-  const { data: emailData, error: emailError } = await supabaseAdmin
-    .from('email')
-    .select('*')
-    .order('id');
+const { data: emailData, error: emailError } = await supabaseAdmin
+  .from('email')
+  .select('*')
+  .order('id');
 
   return {
     props: {
@@ -27,10 +27,29 @@ const Contact = ({ emailData, emailError }) => {
     setFile(event.target.files[0]);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append('file', file);
+
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    const { data: imageData, error: uploadError } = await supabase.storage
+      .from('images')
+      .upload(`images/${file.name}`, file, {
+        cacheControl: 'max-age=31536000, public',
+        upsert: false,
+      });
+
+    if (uploadError) {
+      alert(uploadError.message);
+      location.reload();
+    } else {
+      alert('Updated to Database Successfully!');
+      location.reload();
+    }
   };
 
   const handleSubscribe = async (event) => {
@@ -44,9 +63,11 @@ const Contact = ({ emailData, emailError }) => {
     const { error } = await supabase.from('email').insert({ email });
   
     if (error) {
-      console.log(error);
+      alert(error);
+      location.reload();
     } else {
       alert('Email added to database!');
+      location.reload();
     }
   };
 
