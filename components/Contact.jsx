@@ -7,10 +7,10 @@ export async function getServerSideProps() {
     process.env.SUPABASE_SERVICE_ROLE_KEY || ''
   )
 
-const { data: emailData, error: emailError } = await supabaseAdmin
-  .from('email')
-  .select('*')
-  .order('id');
+  const { data: emailData, error: emailError } = await supabaseAdmin
+    .from('email')
+    .select('*')
+    .order('id');
 
   return {
     props: {
@@ -21,47 +21,54 @@ const { data: emailData, error: emailError } = await supabaseAdmin
 }
 
 const Contact = ({ emailData, emailError }) => {
-  const [file, setFile] = useState(null);
+  const [name, setName] = useState('');
+  const [subject, setSubject] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
+  const [email, setEmail] = useState('');
 
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+  const handleNameChange = (event) => {
+    setName(event.target.value);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubjectChange = (event) => {
+    setSubject(event.target.value);
+  };
+
+  const handleImageUrlChange = (event) => {
+    setImageUrl(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleImageSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append('file', file);
 
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    const { data: imageData, error: uploadError } = await supabase.storage
-      .from('images')
-      .upload(`images/${file.name}`, file, {
-        cacheControl: 'max-age=31536000, public',
-        upsert: false,
-      });
+    const { error } = await supabase.from('images').insert({ name, subject, image_url: imageUrl });
 
-    if (uploadError) {
-      alert(uploadError.message);
+    if (error) {
+      alert(error);
       location.reload();
     } else {
-      alert('Updated to Database Successfully!');
+      alert('Details added to database!');
       location.reload();
     }
   };
 
-  const handleSubscribe = async (event) => {
+  const handleEmailSubmit = async (event) => {
     event.preventDefault();
-    const email = event.target.email.value;
-  
+
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
     const supabase = createClient(supabaseUrl, supabaseKey);
-  
+
     const { error } = await supabase.from('email').insert({ email });
-  
+
     if (error) {
       alert(error);
       location.reload();
@@ -73,21 +80,21 @@ const Contact = ({ emailData, emailError }) => {
 
   return (
     <div className='max-w-[1240px] m-auto p-4 h-screen'>
-        <h1 className='text-2xl font-bold text-center pt-16 pb-8'>Enter details to contribute:</h1>     
-        <form className='max-w-[600px] m-auto' onSubmit={handleSubmit}>
-            <input className='border shadow-lg p-3 w-full mt-3.5' type="text" placeholder='Name' required />
-            <input className='border shadow-lg p-3 w-full mt-3.5' type="text" placeholder='Subject' required />
-            <input className='border shadow-lg p-3 w-full mt-3.5' type="file" onChange={handleFileChange} required />
-            <button className='border shadow-lg p-3 w-full mt-3.5' type="submit">Submit</button>
-        </form>
+      <h1 className='text-2xl font-bold text-center pt-16 pb-2'>Enter details to contribute:</h1>     
+      <form className='max-w-[600px] m-auto' onSubmit={handleImageSubmit}>
+        <input className='border shadow-lg p-3 w-full mt-3.5' type="text" placeholder='Name' value={name} onChange={handleNameChange} required />
+        <input className='border shadow-lg p-3 w-full mt-3.5' type="text" placeholder='Subject' value={subject} onChange={handleSubjectChange} required />
+        <input className='border shadow-lg p-3 w-full mt-3.5' type='url' placeholder='Image URL' value={imageUrl} onChange={handleImageUrlChange} required />
+        <button className='border shadow-lg p-3 w-full mt-3.5' type="submit">Submit</button>
+      </form>
 
-        <h1 className='text-2xl font-bold text-center pt-16 pb-4'>Subscribe to E-mail updates:</h1>
-        <form className='max-w-[600px] m-auto' onSubmit={handleSubscribe}>
-            <input className='border shadow-lg w-full p-3' type="email" placeholder='Email'name="email" required />
-            <button className='border shadow-lg p-3 w-full mt-3' type="submit">Subscirbe</button>
-        </form>
-    </div>
-  );
+      <h1 className='text-2xl font-bold text-center pt-16 pb-1'>Subscribe to E-mail updates:</h1>     
+      <form className='max-w-[600px] m-auto' onSubmit={handleEmailSubmit}>
+          <input className='border shadow-lg p-3 w-full mt-3' type="email" placeholder='Email address' value={email} onChange={handleEmailChange} required />
+          <button className='border shadow-lg p-3 w-full mt-3' type="submit">Subscribe</button>
+  </form>
+</div>
+);
 };
 
 export default Contact;
