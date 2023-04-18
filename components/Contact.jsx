@@ -80,7 +80,15 @@ const Contact = ({ emailData, emailError }) => {
 
   return (
     <div className='max-w-[1240px] m-auto p-4 h-screen'>
-      <h1 className='text-2xl font-bold text-center pt-16 pb-2'>Enter details to contribute:</h1>     
+      <h1 className='text-2xl font-bold text-center pt-4 pb-1'>Image Converter to URL:</h1>
+      <p className='text-center pb-1'>In case if image URL is not present , use this image converter to URL to get a image URL:</p>     
+      <form className='max-w-[600px] m-auto'>
+          <input className='border shadow-lg p-3 w-full mt-3' type="file" placeholder='upload image' required />
+          <button className='border shadow-lg p-3 w-full my-3' type="submit">Convert</button>
+          <p>Image URL is : <br/>  </p>
+      </form> 
+      
+      <h1 className='text-2xl font-bold text-center pt-8 pb-2'>Enter details to contribute:</h1>     
       <form className='max-w-[600px] m-auto' onSubmit={handleImageSubmit}>
         <input className='border shadow-lg p-3 w-full mt-3.5' type="text" placeholder='Name' value={name} onChange={handleNameChange} required />
         <input className='border shadow-lg p-3 w-full mt-3.5' type="text" placeholder='Subject' value={subject} onChange={handleSubjectChange} required />
@@ -92,7 +100,10 @@ const Contact = ({ emailData, emailError }) => {
       <form className='max-w-[600px] m-auto' onSubmit={handleEmailSubmit}>
           <input className='border shadow-lg p-3 w-full mt-3' type="email" placeholder='Email address' value={email} onChange={handleEmailChange} required />
           <button className='border shadow-lg p-3 w-full mt-3' type="submit">Subscribe</button>
-  </form>
+      </form>
+
+      <br />
+      <br />
 </div>
 );
 };
