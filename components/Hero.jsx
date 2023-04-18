@@ -7,9 +7,9 @@ const Hero = ({heading, message}) => {
       <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]' />
       <div className='p-5 text-white z-[2] mt-[-10rem]'>
         <h2 className='text-5xl font-bold'>{heading}</h2>
-        <p className='py-5 mt-2 justify text-xl'>{message}</p>
+        <p className='py-5 mt-1 justify text-xl'>{message}</p>
 
-        <button onClick={() => window.open('/#', '_self')} className='py-3 mt-8 border w-full'>Home</button>
+        <button onClick={() => window.open('/#', '_self')} className='py-3 mt-2 border w-full'>Home</button>
         <br />
         <button onClick={() => window.open('/libraries', '_self')} className='py-3 mt-6 border w-full'>Libraries</button>
         <br />
