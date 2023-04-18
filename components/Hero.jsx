@@ -9,10 +9,13 @@ const Hero = ({heading, message}) => {
         <h2 className='text-5xl font-bold'>{heading}</h2>
         <p className='py-5 mt-2 justify text-xl'>{message}</p>
 
-        <button onClick= {() => window.open('/#', '_self')} className='px-8 py-2 mt-4 mr-3 border'>Home</button>
-        <button onClick= {() => window.open('/libraries', '_self')} className='px-8 py-2 mt-4 mr-3 border'>Libraries</button>
-        <button onClick= {() => window.open('/contribute', '_self')} className='px-8 py-2 mt-4 mr-3 border'>Contribute</button>
-        <button onClick= {() => window.open('https://blog.storyblocks.com/creators/what-is-the-difference-between-royalty-free-and-copyright-free/#:~:text=What%20is%20%E2%80%9CCopyright%2DFree%E2%80%9D,ownership%2Fcreation%20of%20that%20work.', '_blank')} className='px-8 py-2 mt-4 mr-5 border'>Learn More</button>
+        <button onClick={() => window.open('/#', '_self')} className='py-3 mt-8 border w-full'>Home</button>
+        <br />
+        <button onClick={() => window.open('/libraries', '_self')} className='py-3 mt-6 border w-full'>Libraries</button>
+        <br />
+        <button onClick={() => window.open('/contribute', '_self')} className='py-3 mt-6 border w-full'>Contribute</button>
+        <br />
+        <button onClick={() => window.open('https://blog.storyblocks.com/creators/what-is-the-difference-between-royalty-free-and-copyright-free/#:~:text=What%20is%20%E2%80%9CCopyright%2DFree%E2%80%9D,ownership%2Fcreation%20of%20that%20work.', '_blank')} className='py-3 mt-6 border w-full'>Learn More</button>
       </div>
     </div>
   );
