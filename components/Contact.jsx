@@ -89,7 +89,7 @@ const Contact = ({ emailData, emailError }) => {
         <button className='border shadow-lg p-3 w-full mt-3.5' type="submit">Submit</button>
       </form>
 
-      <h1 className='text-2xl font-bold text-center pt-16 pb-2'>Subscribe to E-mail updates:</h1>     
+      <h1 className='text-2xl font-bold text-center pt-16 pb-1'>Subscribe to E-mail updates:</h1>     
       <form className='max-w-[600px] m-auto' onSubmit={handleEmailSubmit}>
           <input className='border shadow-lg p-3 w-full mt-3' type="email" placeholder='Email address' value={email} onChange={handleEmailChange} required />
           <button className='border shadow-lg p-3 w-full mt-3' type="submit">Subscribe</button>
