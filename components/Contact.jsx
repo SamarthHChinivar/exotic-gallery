@@ -94,6 +94,8 @@ const Contact = ({ emailData, emailError }) => {
           <input className='border shadow-lg p-3 w-full mt-3' type="email" placeholder='Email address' value={email} onChange={handleEmailChange} required />
           <button className='border shadow-lg p-3 w-full mt-3' type="submit">Subscribe</button>
       </form>
+
+      <br />
 </div>
 );
 };
