@@ -1,6 +1,5 @@
-![image](https://user-images.githubusercontent.com/104615876/232297423-2929a6a3-9736-4eaf-8417-ec45b24e922e.png)
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+It is available for preview on <a href='https://exotic-gallery.vercel.app/'>https://exotic-gallery.vercel.app</a>.
 
 ## Getting Started
 
