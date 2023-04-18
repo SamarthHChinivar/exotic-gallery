@@ -1,5 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-It is available for preview on <a href='https://exotic-gallery.vercel.app/'>https://exotic-gallery.vercel.app</a>.
+-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
+<br/>
+-It is available for preview on <a href='https://exotic-gallery.vercel.app/'>https://exotic-gallery.vercel.app</a>. 
+<br/>
+
+![exotic-cover](https://user-images.githubusercontent.com/104615876/232762806-dd7bddd6-915b-4b0b-b803-68cb146304aa.jpg)
 
 ## Getting Started
 
