@@ -16,7 +16,7 @@ import DownloadImg from './DownloadImg';
 const Download = () => {
   return (
     <div className='max-w-[1240px] mx-auto text-center py-24'>
-        <p className='text-2xl font-bold'>Checkout <b><a href='https://unsplash.com' target='_blank'>Unsplash.com</a></b> </p>
+        <p className='text-2xl font-bold'>Checkout <b><a href='https://unsplash.com' target='_blank' rel="noopener noreferrer" >Unsplash.com</a></b> </p>
         <p className='pb-4'>Click on Image to Download</p>
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 p-4'>
             <DownloadImg socialImg={IgImg1} download={IgImg1} />

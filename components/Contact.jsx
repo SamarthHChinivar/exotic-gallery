@@ -81,7 +81,7 @@ const Contact = ({ emailData, emailError }) => {
   return (
     <div className='max-w-[1240px] m-auto p-4 h-screen'>
       <h1 className='text-2xl font-bold text-center pt-16 pb-1'>Enter details to contribute:</h1>
-      <p className='text-center pb-2'>In case if only image is avialable , for converting it into URL use <b><a href="https://imgbb.com" target='_blank'>https://imgbb.com</a></b></p>       
+      <p className='text-center pb-2'>In case if only image is avialable , for converting it into URL use <b><a href="https://imgbb.com" target='_blank' rel="noopener noreferrer" >https://imgbb.com</a></b></p>       
       <form className='max-w-[600px] m-auto' onSubmit={handleImageSubmit}>
         <input className='border shadow-lg p-3 w-full mt-3.5' type="text" placeholder='Name' value={name} onChange={handleNameChange} required />
         <input className='border shadow-lg p-3 w-full mt-3.5' type="text" placeholder='Subject' value={subject} onChange={handleSubjectChange} required />

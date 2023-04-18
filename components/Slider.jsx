@@ -40,7 +40,7 @@ const Slider = ({ slides }) => {
                 size={50}
               />
               {index === current && (
-                <a href={slide.image} target='_blank'>
+                <a href={slide.image} target='_blank' rel="noopener noreferrer" >
                   <Image
                     src={slide.image}
                     alt='/'
