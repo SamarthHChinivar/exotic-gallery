@@ -1,12 +1,17 @@
 # Exotic Gallery
 
--This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
-<br/>
--It is available for preview on <a href='https://exotic-gallery.vercel.app/'>https://exotic-gallery.vercel.app</a>. 
+- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
+- It is available for preview on <a href='https://exotic-gallery.vercel.app/'>https://exotic-gallery.vercel.app</a>. 
+- It is developed as a project during Internship at Varcons Technologies.
 <br/>
 
 ![exotic-cover](https://user-images.githubusercontent.com/104615876/232762806-dd7bddd6-915b-4b0b-b803-68cb146304aa.jpg)
 
+<br/>
+
+- If any queries , contact through this <a href='http://samarth-portfolio-website.000webhostapp.com' target='_blank'>website.</a>
+
+<br/>
 ## Getting Started
 
 First, run the development server:
