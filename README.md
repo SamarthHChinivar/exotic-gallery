@@ -9,7 +9,7 @@
 
 <br/>
 
-- If any queries , contact through this <a href='http://samarth-portfolio-website.000webhostapp.com' target='_blank'>website.</a>
+- If any queries , contact through this <a href='http://samarth-portfolio-website.000webhostapp.com' target='_blank' rel="noreopener">website.</a>
 
 <br/>
 
