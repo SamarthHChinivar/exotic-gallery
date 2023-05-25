@@ -79,7 +79,7 @@ const Contact = ({ emailData, emailError }) => {
   };
 
   return (
-    <div className='max-w-[1240px] m-auto p-4 h-screen'>
+    <div className='max-w-[1240px] m-auto p-4 mb-16'>
       <h1 className='text-2xl font-bold text-center pt-8 pb-2'>Enter details to contribute:</h1>
       <p className='text-center pb-2'>In case if only image is avialable , for converting it into URL use <b><a href="https://imgbb.com" target='_blank' rel="noopener noreferrer" >https://imgbb.com</a></b></p>       
       <form className='max-w-[600px] m-auto' onSubmit={handleImageSubmit}>
@@ -94,7 +94,6 @@ const Contact = ({ emailData, emailError }) => {
           <input className='border shadow-lg p-3 w-full mt-3' type="email" placeholder='Email address' value={email} onChange={handleEmailChange} required />
           <button className='border shadow-lg p-3 w-full mt-3' type="submit">Subscribe</button>
       </form>
-      <br />
 </div>
 );
 };
