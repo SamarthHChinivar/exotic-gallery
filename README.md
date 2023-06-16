@@ -4,7 +4,7 @@
 - It is available for preview on <a href='https://exotic-gallery.vercel.app/'>https://exotic-gallery.vercel.app</a>. 
 - It is developed as a project during Internship at Varcons Technologies.
 - If any queries , contact through this <a href='http://samarth-portfolio-website.000webhostapp.com/#contact' target='_blank' rel="noreopener">website.</a>
-<br/>
+<br/><br/>
 
 ![exotic-cover](https://user-images.githubusercontent.com/104615876/232762806-dd7bddd6-915b-4b0b-b803-68cb146304aa.jpg)
 
