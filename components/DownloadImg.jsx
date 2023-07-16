@@ -17,6 +17,8 @@ const DownloadImg = ({ socialImg, download }) => {
         src={socialImg}
         alt='/'
         className='w-full h-full'
+        height="300px"
+        width="400px"
         layout='responsive'
       />
       {/* Overlay */}
