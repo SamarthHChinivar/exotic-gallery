@@ -1,7 +1,8 @@
 # Exotic Gallery
 
+- [Website](https://exotic-gallery.vercel.app/) for viewing, contributing and downloading stock photos.
 - This is a [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) & [Supabase](https://supabase.com/) project.
-- It is available for preview on <a href='https://exotic-gallery.vercel.app/'>https://exotic-gallery.vercel.app</a>. 
+- It is available for preview on <a href='https://exotic-gallery.vercel.app/'>https://exotic-gallery.vercel.app</a>.
 - It is developed as a project during the Internship at Varcons Technologies.
 - If any queries , contact through this <a href='https://samarth-h-chinivar.vercel.app/#contact' target='_blank' rel="noreopener">website.</a>
 <br/><br/>
